@@ -3,111 +3,1087 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo de Alya | Zaien</title>
+    <title>DESOKUPA - Recuperamos tu propiedad | Desalojo profesional de inmuebles ocupados</title>
+    <meta name="description" content="DESOKUPA: empresa lider en recuperacion de inmuebles ocupados ilegalmente. Desalojo profesional, seguro y legal. Llama al 676 345 676.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos generales para que quede bonito */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #333;
-        }
+        :root{--bg-primary:#fff;--bg-secondary:#f7f7f8;--bg-tertiary:#ececed;--bg-card:#fff;--bg-nav:rgba(255,255,255,.88);--text-primary:#111;--text-secondary:#444;--text-tertiary:#777;--text-muted:#aaa;--border-color:#e0e0e0;--accent:#c41e1e;--accent-hover:#a81818;--accent-light:rgba(196,30,30,.07);--accent-glow:rgba(196,30,30,.15);--shadow-sm:0 1px 3px rgba(0,0,0,.06);--shadow-md:0 4px 16px rgba(0,0,0,.08);--shadow-lg:0 12px 40px rgba(0,0,0,.1);--shadow-xl:0 24px 60px rgba(0,0,0,.12);--gradient-hero:linear-gradient(160deg,#0a0a0a 0%,#1a1412 30%,#231a17 60%,#1a1210 100%);--overlay-hero:rgba(5,5,5,.5);--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px;--transition-fast:.2s cubic-bezier(.4,0,.2,1);--transition:.35s cubic-bezier(.4,0,.2,1);--font-heading:'Space Grotesk','Segoe UI',sans-serif;--font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+        [data-theme="dark"]{--bg-primary:#0a0a0b;--bg-secondary:#141416;--bg-tertiary:#1e1e22;--bg-card:#161618;--bg-nav:rgba(10,10,11,.88);--text-primary:#f5f5f5;--text-secondary:#ccc;--text-tertiary:#999;--text-muted:#666;--border-color:#2a2a2e;--accent:#ef4444;--accent-hover:#dc2626;--accent-light:rgba(239,68,68,.08);--accent-glow:rgba(239,68,68,.2);--shadow-sm:0 1px 3px rgba(0,0,0,.3);--shadow-md:0 4px 16px rgba(0,0,0,.4);--shadow-lg:0 12px 40px rgba(0,0,0,.5);--shadow-xl:0 24px 60px rgba(0,0,0,.6);--gradient-hero:linear-gradient(160deg,#050505 0%,#1a1412 30%,#231a17 60%,#1a1210 100%);--overlay-hero:rgba(0,0,0,.6)}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+        body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.7;transition:background var(--transition),color var(--transition);overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}button{font-family:inherit;cursor:pointer;border:none;background:none}input,textarea,select{font-family:inherit}
+        ::selection{background:var(--accent);color:#fff}
+        .container{max-width:1240px;margin:0 auto;padding:0 24px}
+        .section{padding:110px 0}
+        .section-label{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+        .section-label::before{content:'';width:20px;height:2px;background:var(--accent);border-radius:1px}
+        .section-title{font-family:var(--font-heading);font-size:clamp(1.9rem,4.2vw,3.2rem);font-weight:700;line-height:1.12;color:var(--text-primary);margin-bottom:20px}
+        .section-subtitle{font-size:1.05rem;color:var(--text-tertiary);max-width:580px;line-height:1.75}
+        .section-header{margin-bottom:64px}
+        .section-header.center{text-align:center}
+        .section-header.center .section-subtitle{margin:0 auto}
+        .accent-line{width:48px;height:3px;background:var(--accent);border-radius:2px;margin-top:18px}
+        .section-header.center .accent-line{margin:18px auto 0}
+        .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
+        .reveal.visible{opacity:1;transform:translateY(0)}
 
-        /* La tarjeta central (efecto cristal) */
-        .card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            max-width: 400px;
-            width: 90%;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-        }
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--bg-nav);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border-color);transition:background var(--transition),border-color var(--transition),box-shadow var(--transition)}
+        .nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.08)}
+        [data-theme="dark"] .nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.4)}
+        .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+        .nav-brand{display:flex;align-items:center;gap:12px}
+        .nav-brand img{width:40px;height:40px;border-radius:8px;object-fit:cover}
+        .nav-brand-text{font-family:var(--font-heading);font-size:1.3rem;font-weight:700;letter-spacing:-.01em;color:var(--text-primary)}
+        .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+        .nav-links a{font-size:.85rem;font-weight:500;color:var(--text-secondary);transition:color var(--transition-fast);position:relative}
+        .nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:var(--accent);border-radius:1px;transition:width var(--transition)}
+        .nav-links a:hover{color:var(--accent)}.nav-links a:hover::after{width:100%}
+        .nav-actions{display:flex;align-items:center;gap:10px}
+        .nav-phone{display:flex;align-items:center;gap:6px;font-size:.85rem;font-weight:600;color:var(--text-primary)}
+        .nav-phone-icon{width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center}
+        .nav-phone-icon svg{width:14px;height:14px;fill:#fff}
+        .theme-toggle{width:40px;height:40px;border-radius:10px;border:1px solid var(--border-color);background:var(--bg-secondary);color:var(--text-secondary);display:flex;align-items:center;justify-content:center;transition:all var(--transition-fast);font-size:1.15rem}
+        .theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+        .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:var(--accent);color:#fff;font-size:.82rem;font-weight:600;border-radius:8px;transition:all var(--transition-fast)}
+        .nav-cta:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 4px 12px var(--accent-glow)}
+        .nav-mobile-btn{display:none;width:40px;height:40px;border:1px solid var(--border-color);background:var(--bg-secondary);border-radius:8px;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+        .nav-mobile-btn span{width:18px;height:2px;background:var(--text-secondary);border-radius:1px;transition:all var(--transition-fast)}
 
-        h1 {
-            color: #6a11cb;
-            margin-bottom: 10px;
-            font-size: 2em;
-        }
+        /* HERO */
+        .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:var(--gradient-hero);overflow:hidden}
+        .hero-bg{position:absolute;inset:0;z-index:1}
+        .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.3}
+        .hero-overlay{position:absolute;inset:0;background:var(--overlay-hero);z-index:2}
+        .hero-content{position:relative;z-index:3;padding-top:72px}
+        .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+        .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px 6px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;font-size:.78rem;font-weight:500;color:rgba(255,255,255,.75);margin-bottom:28px;backdrop-filter:blur(8px)}
+        .hero-badge-dot{width:7px;height:7px;background:#ef4444;border-radius:50%;animation:pulse-dot 2s infinite}
+        @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+        .hero h1{font-family:var(--font-heading);font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:700;line-height:1.06;color:#fff;margin-bottom:24px}
+        .hero h1 .accent{color:#ef4444}
+        .hero-desc{font-size:1.1rem;color:rgba(255,255,255,.65);max-width:480px;line-height:1.75;margin-bottom:36px}
+        .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+        .btn-primary{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;background:#ef4444;color:#fff;font-size:.92rem;font-weight:600;border-radius:10px;transition:all var(--transition-fast)}
+        .btn-primary:hover{background:#dc2626;transform:translateY(-2px);box-shadow:0 8px 24px rgba(239,68,68,.3)}
+        .btn-outline{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;background:transparent;color:#fff;font-size:.92rem;font-weight:600;border-radius:10px;border:1px solid rgba(255,255,255,.2);transition:all var(--transition-fast)}
+        .btn-outline:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4)}
+        .hero-image-col{display:flex;flex-direction:column;gap:16px}
+        .hero-image-main{border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4);position:relative}
+        .hero-image-main img{width:100%;height:380px;object-fit:cover}
+        .hero-image-label{position:absolute;bottom:16px;left:16px;background:rgba(0,0,0,.7);backdrop-filter:blur(10px);padding:8px 14px;border-radius:8px;color:#fff;font-size:.8rem;font-weight:500}
+        .hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)}
+        .hero-stat-number{font-family:var(--font-heading);font-size:2rem;font-weight:700;color:#fff}
+        .hero-stat-number span{color:#ef4444}
+        .hero-stat-label{font-size:.78rem;color:rgba(255,255,255,.45);margin-top:2px}
 
-        p {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+        /* SLOGAN */
+        .slogan-banner{background:var(--bg-secondary);padding:60px 0;text-align:center}
+        .slogan-banner img{max-height:200px;margin:0 auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-md)}
+        .slogan-banner-text{font-family:var(--font-heading);font-size:clamp(1.4rem,3vw,2.2rem);font-weight:700;color:var(--text-primary);margin-top:28px;line-height:1.3}
+        .slogan-banner-text span{color:var(--accent)}
 
-        /* Estilo para la imagen de Alya */
-        .alya-img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
+        /* SECTION WITH IMAGE (reusable) */
+        .si-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+        .si-grid.reverse .si-img{order:2}.si-grid.reverse .si-content{order:1}
+        .si-img{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-xl)}
+        .si-img img{width:100%;height:460px;object-fit:cover;transition:transform var(--transition)}
+        .si-img:hover img{transform:scale(1.03)}
+        .si-content .section-subtitle{margin-bottom:24px}
+        .si-text{font-size:.92rem;color:var(--text-tertiary);line-height:1.8;margin-bottom:28px}
 
-        .alya-img:hover {
-            transform: scale(1.05);
-        }
+        /* FEATURES LIST */
+        .feat-list{display:flex;flex-direction:column;gap:18px;margin-top:28px}
+        .feat-item{display:flex;gap:14px;align-items:flex-start}
+        .feat-icon{width:42px;height:42px;min-width:42px;background:var(--accent-light);border-radius:10px;display:flex;align-items:center;justify-content:center}
+        .feat-icon svg{width:18px;height:18px;fill:var(--accent)}
+        .feat-item h4{font-size:.9rem;font-weight:600;margin-bottom:3px}
+        .feat-item p{font-size:.84rem;color:var(--text-tertiary);line-height:1.6}
 
-        /* El botón */
-        .btn {
-            background: linear-gradient(45deg, #6a11cb, #2575fc);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
+        /* SERVICES */
+        .services{background:var(--bg-secondary)}
+        .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .service-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:32px;transition:all var(--transition);position:relative;overflow:hidden}
+        .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform var(--transition)}
+        .service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
+        .service-card:hover::before{transform:scaleX(1)}
+        .service-icon{width:48px;height:48px;background:var(--accent-light);border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+        .service-icon svg{width:22px;height:22px;fill:var(--accent)}
+        .service-card h3{font-family:var(--font-heading);font-size:1.08rem;font-weight:600;margin-bottom:10px}
+        .service-card p{font-size:.88rem;color:var(--text-tertiary);line-height:1.7}
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
-        }
+        /* SERVICE WITH IMAGE */
+        .svc-img-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-color);background:var(--bg-card);margin-bottom:20px}
+        .svc-img-left{min-height:360px}
+        .svc-img-left img{width:100%;height:100%;object-fit:cover}
+        .svc-img-right{padding:40px 44px}
+        .svc-img-right h3{font-family:var(--font-heading);font-size:1.5rem;font-weight:700;margin-bottom:14px}
+        .svc-img-right>p{font-size:.92rem;color:var(--text-tertiary);line-height:1.8;margin-bottom:22px}
+        .svc-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+        .svc-list li{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--text-secondary)}
+        .svc-list li svg{width:16px;height:16px;fill:var(--accent);min-width:16px}
 
-        /* Pie de página pequeño */
-        .footer {
-            margin-top: 20px;
-            font-size: 0.8em;
-            color: #888;
-        }
+        /* PROCESS */
+        .process{background:var(--bg-primary)}
+        .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative}
+        .process-steps::before{content:'';position:absolute;top:40px;left:12%;right:12%;height:2px;background:var(--border-color);z-index:0}
+        .process-step{position:relative;z-index:1;text-align:center}
+        .process-step-number{width:60px;height:60px;background:var(--bg-primary);border:2px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:1.2rem;font-weight:700;color:var(--accent);margin:0 auto 18px;transition:all var(--transition)}
+        .process-step:hover .process-step-number{background:var(--accent);color:#fff}
+        .process-step h4{font-family:var(--font-heading);font-size:.95rem;font-weight:600;margin-bottom:8px}
+        .process-step p{font-size:.84rem;color:var(--text-tertiary);line-height:1.65}
+
+        /* STATS */
+        .stats{background:var(--gradient-hero);position:relative;overflow:hidden}
+        .stats::before{content:'';position:absolute;inset:0;background:url('https://i.imgur.com/gbHT1Bf.jpeg') center/cover no-repeat;opacity:.1}
+        .stats .container{position:relative;z-index:1}
+        .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+        .stat-item{padding:20px}
+        .stat-number{font-family:var(--font-heading);font-size:3rem;font-weight:700;color:#fff;line-height:1}
+        .stat-number span{color:#ef4444}
+        .stat-label{font-size:.88rem;color:rgba(255,255,255,.55);margin-top:8px}
+
+        /* PRICING */
+        .pricing{background:var(--bg-primary)}
+        .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+        .pricing-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:40px 32px;transition:all var(--transition);position:relative;overflow:hidden}
+        .pricing-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl)}
+        .pricing-card.popular{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),var(--shadow-lg)}
+        .pricing-card.popular::before{content:'MAS SOLICITADO';position:absolute;top:16px;right:-28px;background:var(--accent);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:5px 36px;transform:rotate(45deg)}
+        .pricing-tier{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+        .pricing-name{font-family:var(--font-heading);font-size:1.3rem;font-weight:700;margin-bottom:6px}
+        .pricing-desc{font-size:.85rem;color:var(--text-tertiary);margin-bottom:24px;line-height:1.6}
+        .pricing-amount{display:flex;align-items:baseline;gap:4px;margin-bottom:28px}
+        .pricing-currency{font-size:1.2rem;font-weight:600;color:var(--text-secondary)}
+        .pricing-value{font-family:var(--font-heading);font-size:3rem;font-weight:700;color:var(--text-primary);line-height:1}
+        .pricing-from{font-size:.82rem;color:var(--text-muted);margin-left:4px}
+        .pricing-features{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:32px;padding-top:24px;border-top:1px solid var(--border-color)}
+        .pricing-features li{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--text-secondary)}
+        .pricing-features li svg{width:18px;height:18px;fill:var(--accent);min-width:18px;margin-top:1px}
+        .pricing-features li.disabled{color:var(--text-muted)}.pricing-features li.disabled svg{fill:var(--text-muted)}
+        .pricing-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px 24px;border-radius:10px;font-size:.92rem;font-weight:600;transition:all var(--transition-fast)}
+        .pricing-btn-primary{background:var(--accent);color:#fff}
+        .pricing-btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 4px 16px var(--accent-glow)}
+        .pricing-btn-secondary{background:var(--bg-secondary);color:var(--text-primary);border:1px solid var(--border-color)}
+        .pricing-btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+        .pricing-note{text-align:center;margin-top:32px;font-size:.82rem;color:var(--text-muted);max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+        /* TESTIMONIALS */
+        .testimonials{background:var(--bg-secondary)}
+        .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .testimonial-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:28px;transition:all var(--transition)}
+        .testimonial-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+        .testimonial-stars{display:flex;gap:3px;margin-bottom:14px}
+        .testimonial-stars svg{width:15px;height:15px;fill:#f59e0b}
+        .testimonial-text{font-size:.9rem;color:var(--text-secondary);line-height:1.75;margin-bottom:18px;font-style:italic}
+        .testimonial-author{display:flex;align-items:center;gap:12px}
+        .testimonial-avatar{width:42px;height:42px;border-radius:50%;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:.82rem}
+        .testimonial-name{font-size:.88rem;font-weight:600}
+        .testimonial-role{font-size:.78rem;color:var(--text-muted)}
+
+        /* LEGAL */
+        .legal{background:var(--bg-primary)}
+        .legal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+        .legal-card{padding:28px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-md);transition:all var(--transition-fast)}
+        .legal-card:hover{border-color:var(--accent)}
+        .legal-card-icon{width:42px;height:42px;background:var(--accent-light);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+        .legal-card-icon svg{width:18px;height:18px;fill:var(--accent)}
+        .legal-card h3{font-family:var(--font-heading);font-size:1rem;font-weight:600;margin-bottom:8px}
+        .legal-card p{font-size:.86rem;color:var(--text-tertiary);line-height:1.7}
+
+        /* FAQ */
+        .faq{background:var(--bg-secondary)}
+        .faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+        .faq-item{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-md);overflow:hidden;transition:all var(--transition-fast)}
+        .faq-item.active{border-color:var(--accent)}
+        .faq-question{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;font-weight:600;font-size:.92rem;transition:color var(--transition-fast);cursor:pointer}
+        .faq-item.active .faq-question{color:var(--accent)}
+        .faq-toggle{width:26px;height:26px;border-radius:50%;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;font-size:1.15rem;transition:all var(--transition-fast);min-width:26px}
+        .faq-item.active .faq-toggle{background:var(--accent);color:#fff;transform:rotate(45deg)}
+        .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
+        .faq-answer-inner{padding:0 22px 18px;font-size:.88rem;color:var(--text-tertiary);line-height:1.8}
+
+        /* CTA */
+        .cta{background:var(--gradient-hero);position:relative;overflow:hidden}
+        .cta::before{content:'';position:absolute;inset:0;background:url('https://i.imgur.com/d6B1gwf.jpeg') center/cover no-repeat;opacity:.1}
+        .cta .container{position:relative;z-index:1;text-align:center}
+        .cta h2{font-family:var(--font-heading);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;margin-bottom:18px}
+        .cta-desc{font-size:1.05rem;color:rgba(255,255,255,.65);max-width:540px;margin:0 auto 36px;line-height:1.7}
+        .cta-phone{font-family:var(--font-heading);font-size:2.4rem;font-weight:700;color:#fff;margin-bottom:8px}
+        .cta-phone a{color:#fff;transition:color var(--transition-fast)}
+        .cta-phone a:hover{color:#ef4444}
+        .cta-phone-label{font-size:.88rem;color:rgba(255,255,255,.45);margin-bottom:28px}
+        .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+        /* CONTACT */
+        .contact{background:var(--bg-primary)}
+        .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px}
+        .contact-info{display:flex;flex-direction:column;gap:28px}
+        .contact-info-item{display:flex;gap:14px}
+        .contact-info-icon{width:46px;height:46px;min-width:46px;background:var(--accent-light);border-radius:11px;display:flex;align-items:center;justify-content:center}
+        .contact-info-icon svg{width:20px;height:20px;fill:var(--accent)}
+        .contact-info-text h4{font-size:.92rem;font-weight:600;margin-bottom:3px}
+        .contact-info-text p{font-size:.84rem;color:var(--text-tertiary);line-height:1.6}
+        .contact-form{display:flex;flex-direction:column;gap:14px}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+        .form-group{display:flex;flex-direction:column;gap:5px}
+        .form-group label{font-size:.76rem;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.05em}
+        .form-group input,.form-group textarea,.form-group select{padding:11px 14px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:9px;color:var(--text-primary);font-size:.88rem;transition:all var(--transition-fast);outline:none}
+        .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
+        .form-group textarea{resize:vertical;min-height:110px}
+        .form-submit{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;background:var(--accent);color:#fff;font-size:.92rem;font-weight:600;border-radius:10px;transition:all var(--transition-fast)}
+        .form-submit:hover{background:var(--accent-hover);transform:translateY(-1px)}
+
+        /* OFFICE IMG in contact */
+        .contact-office-img{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);margin-top:20px}
+        .contact-office-img img{width:100%;height:200px;object-fit:cover}
+
+        /* FOOTER */
+        .footer{background:#0a0a0b;color:#fff;padding:64px 0 0}
+        .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08)}
+        .footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+        .footer-brand img{width:34px;height:34px;border-radius:6px;object-fit:cover}
+        .footer-brand-text{font-family:var(--font-heading);font-size:1.2rem;font-weight:700}
+        .footer-desc{font-size:.84rem;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:18px}
+        .footer-social{display:flex;gap:8px}
+        .footer-social a{width:34px;height:34px;border-radius:7px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:all var(--transition-fast)}
+        .footer-social a:hover{background:#ef4444;border-color:#ef4444}
+        .footer-social a svg{width:15px;height:15px;fill:rgba(255,255,255,.65)}
+        .footer-column h4{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;color:rgba(255,255,255,.85)}
+        .footer-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+        .footer-links a{font-size:.82rem;color:rgba(255,255,255,.45);transition:color var(--transition-fast)}
+        .footer-links a:hover{color:#ef4444}
+        .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+        .footer-bottom p{font-size:.78rem;color:rgba(255,255,255,.3)}
+        .footer-bottom-links{display:flex;gap:20px}
+        .footer-bottom-links a{font-size:.78rem;color:rgba(255,255,255,.3);transition:color var(--transition-fast)}
+        .footer-bottom-links a:hover{color:rgba(255,255,255,.6)}
+
+        /* RESPONSIVE */
+        @media(max-width:1200px){.services-grid{grid-template-columns:repeat(2,1fr)}.svc-img-grid{grid-template-columns:1fr}.svc-img-left{min-height:280px}}
+        @media(max-width:1024px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-image-col{display:none}.stats-grid{grid-template-columns:repeat(2,1fr)}.pricing-grid{grid-template-columns:1fr 1fr}.pricing-card.popular{grid-column:span 2}.footer-grid{grid-template-columns:1fr 1fr}.si-grid{gap:40px}}
+        /* MOBILE MENU STYLES */
+        .nav-links.mobile-open{display:flex!important;position:absolute;top:72px;left:0;right:0;background:var(--bg-primary);flex-direction:column;padding:20px 24px;gap:16px;border-bottom:1px solid var(--border-color);box-shadow:var(--shadow-lg);z-index:999;animation:slideDown .3s ease}
+        @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+        .nav-mobile-btn.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+        .nav-mobile-btn.active span:nth-child(2){opacity:0}
+        .nav-mobile-btn.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+        @media(max-width:768px){.nav-links{display:none}.nav-phone{display:none}.nav-mobile-btn{display:flex}.section{padding:72px 0}.si-grid,.si-grid.reverse{grid-template-columns:1fr}.si-grid.reverse .si-img,.si-grid.reverse .si-content{order:unset}.si-img img{height:300px}.services-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr}.process-steps::before{display:none}.stats-grid{grid-template-columns:1fr 1fr;gap:20px}.pricing-grid{grid-template-columns:1fr}.pricing-card.popular{grid-column:span 1}.testimonials-grid{grid-template-columns:1fr}.legal-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr;gap:28px}.contact-grid{grid-template-columns:1fr;gap:36px}.hero-stats{flex-wrap:wrap;gap:24px}}
+        @media(max-width:480px){.hero h1{font-size:2rem}.hero-actions{flex-direction:column}.process-steps{grid-template-columns:1fr}.hero-stats{flex-direction:column;gap:16px}.footer-bottom{flex-direction:column;gap:14px;text-align:center}}
+        @media(min-width:1800px){.container{max-width:1400px}}
+        @media(min-width:2400px){html{font-size:18px}.container{max-width:1600px}}
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <!-- Imagen de Alya (Puedes cambiar el src por tu propia imagen) -->
-        <!-- He puesto una imagen genérica de anime por ahora -->
-        <img src="https://i.pinimg.com/736x/8a/d6/4d/8ad64d7769f65e3b6b6b6b6b6b6b6b6b.jpg" alt="Alya Koujo" class="alya-img" onerror="this.src='https://via.placeholder.com/150?text=Alya'">
-        
-        <h1>¡Hola, soy Alya!</h1>
-        <p>Bienvenido al rincón oficial de Zaien. Aquí es donde la magia del anime y la tecnología se encuentran. ¿Listo para aprender ruso? 😉</p>
-        
-        <button class="btn" onclick="saludar()">Haz clic aquí</button>
-
-        <div class="footer">
-            Creado con ❤️ por Zaien | GitHub Pages
+    <!-- NAVIGATION -->
+    <nav class="nav" id="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="nav-brand">
+                <img src="https://i.imgur.com/fOOP2c8.jpeg" alt="DESOKUPA Logo">
+                <span class="nav-brand-text">DESOKUPA</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#precios">Precios</a></li>
+                <li><a href="#legal">Legal</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="nav-phone">
+                    <div class="nav-phone-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+                    676 345 676
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Cambiar tema"><span id="theme-icon">&#9790;</span></button>
+                <a href="tel:676345676" class="nav-cta">
+                    <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#fff"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    Llamar ahora
+                </a>
+                <button class="nav-mobile-btn" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+            </div>
         </div>
-    </div>
+    </nav>
+
+    <!-- ==========================================
+         HERO - Imagen: rompen puerta (accion dramatica)
+         ========================================== -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg">
+            <img src="https://i.imgur.com/gbHT1Bf.jpeg" alt="Nuestro equipo accediendo al inmueble ocupado">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-badge"><span class="hero-badge-dot"></span> Disponibles 24 horas, 7 dias a la semana</div>
+                    <h1>Recuperamos tu propiedad. <span class="accent">Sin excusas.</span></h1>
+                    <p class="hero-desc">Somos la empresa lider en recuperacion de inmuebles ocupados ilegalmente. Actuamos con rapidez, seguridad y dentro del marco legal para devolverte lo que te pertenece.</p>
+                    <div class="hero-actions">
+                        <a href="tel:676345676" class="btn-primary">
+                            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#fff"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            Llamar al 676 345 676
+                        </a>
+                        <a href="#servicios" class="btn-outline">Ver servicios</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div><div class="hero-stat-number">2.500<span>+</span></div><div class="hero-stat-label">Desahucios realizados</div></div>
+                        <div><div class="hero-stat-number">98<span>%</span></div><div class="hero-stat-label">Tasa de exito</div></div>
+                        <div><div class="hero-stat-number">24<span>h</span></div><div class="hero-stat-label">Respuesta maxima</div></div>
+                        <div><div class="hero-stat-number">15<span>+</span></div><div class="hero-stat-label">Anos de experiencia</div></div>
+                    </div>
+                </div>
+                <div class="hero-image-col">
+                    <div class="hero-image-main">
+                        <img src="https://i.imgur.com/0RvWyyL.jpeg" alt="Recuperacion pacifica de inmueble">
+                        <div class="hero-image-label">Recuperacion pacifica y controlada</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SLOGAN - Imagen: Eslogan del usuario
+         ========================================== -->
+    <section class="slogan-banner">
+        <div class="container">
+            <img src="https://i.imgur.com/2ezPnBg.jpeg" alt="Eslogan DESOKUPA">
+            <p class="slogan-banner-text">Tu propiedad es <span>tuya</span>. Nosotros nos encargamos del resto.</p>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         NOSOTROS - Imagen: Oficina desde fuera (presencia profesional)
+         ========================================== -->
+    <section class="section" id="nosotros" style="background:var(--bg-primary)">
+        <div class="container">
+            <div class="si-grid reveal">
+                <div class="si-content">
+                    <span class="section-label">Quienes somos</span>
+                    <h2 class="section-title">La firma mas reconocida en recuperacion de inmuebles</h2>
+                    <p class="section-subtitle">DESOKUPA nacio con una mision clara: defender el derecho a la propiedad. Desde nuestros inicios hemos ayudado a miles de propietarios a recuperar sus viviendas e inmuebles frente a la ocupacion ilegal, actuando siempre con la maxima profesionalidad y dentro del marco juridico vigente.</p>
+                    <p class="si-text">Nuestro equipo esta formado por profesionales del sector de la seguridad privada con anos de experiencia, abogados especializados en derecho inmobiliario y mediadores capacitados para la resolucion de conflictos. Cada caso que llega a nuestras manos es tratado de forma individualizada, disenando una estrategia especifica que garantice la recuperacion del inmueble en el menor tiempo posible y con total garantia legal.</p>
+                    <div class="feat-list">
+                        <div class="feat-item">
+                            <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+                            <div><h4>Actuacion legal garantizada</h4><p>Cada intervencion se realiza bajo supervision juridica, cumpliendo estrictamente la legislacion vigente en materia de propiedad y ocupacion ilegal.</p></div>
+                        </div>
+                        <div class="feat-item">
+                            <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+                            <div><h4>Respuesta inmediata 24h</h4><p>Nuestro equipo esta disponible las 24 horas, los 7 dias de la semana. Intervencion garantizada en un plazo maximo de 24 horas desde la solicitud.</p></div>
+                        </div>
+                        <div class="feat-item">
+                            <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+                            <div><h4>Equipo multidisciplinar</h4><p>Seguridad privada, abogados, mediadores y peritos trabajan de forma coordinada para resolver cada caso con la maxima eficacia.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="si-img">
+                    <img src="https://i.imgur.com/d6B1gwf.jpeg" alt="Oficina central de DESOKUPA">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SERVICIO PRINCIPAL: DESALOJO - Imagen: sacan ocupas
+         ========================================== -->
+    <section class="section services" id="servicios">
+        <div class="container">
+            <div class="section-header center reveal">
+                <span class="section-label">Nuestros servicios</span>
+                <h2 class="section-title">Soluciones integrales para la recuperacion de tu inmueble</h2>
+                <p class="section-subtitle">Ofrecemos un abanico completo de servicios disenados para abordar cada situacion de ocupacion ilegal, desde la prevencion hasta la recuperacion efectiva de la propiedad.</p>
+                <div class="accent-line"></div>
+            </div>
+
+            <!-- Desalojo con imagen -->
+            <div class="svc-img-grid reveal">
+                <div class="svc-img-left">
+                    <img src="https://i.imgur.com/0RvWyyL.jpeg" alt="Desalojo profesional y pacifico de inmueble ocupado">
+                </div>
+                <div class="svc-img-right">
+                    <span class="section-label">Servicio principal</span>
+                    <h3>Desalojo y recuperacion de inmuebles</h3>
+                    <p>Nuestro servicio estrella. Nos encargamos de todo el proceso de recuperacion de tu propiedad ocupada ilegalmente. Desde la valoracion inicial hasta la entrega del inmueble completamente desocupado y seguro, gestionamos cada fase con profesionalidad y rigor legal.</p>
+                    <ul class="svc-list">
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Valoracion y diagnostico del caso en menos de 24 horas</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Intervencion de seguridad privada coordinada y supervisada</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Gestion juridica completa con abogados especializados</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Cambio de cerradura y aseguramiento posterior incluido</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Resto de servicios -->
+            <div class="services-grid reveal">
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+                    <h3>Prevencion de ocupacion</h3>
+                    <p>Servicio preventivo que incluye la instalacion de sistemas de seguridad avanzados, vigilancia periodica y revision integral del estado del inmueble para evitar que personas no autorizadas accedan a tu propiedad.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM5 15h14v3H5z"/></svg></div>
+                    <h3>Asesoria juridica inmobiliaria</h3>
+                    <p>Abogados especializados en derecho inmobiliario te acompanan durante todo el proceso. Gestionamos todos los tramites legales necesarios para la recuperacion de tu propiedad de forma agil y eficaz.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                    <h3>Mediacion y negociacion</h3>
+                    <p>Mediadores certificados negocian con los ocupantes para lograr una salida voluntaria y pacifica del inmueble, reduciendo significativamente los tiempos y costes para el propietario.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg></div>
+                    <h3>Cambio de cerraduras y aseguramiento</h3>
+                    <p>Cambio inmediato de todas las cerraduras y sistemas de acceso. Instalamos medidas de seguridad adicionales y entregamos el inmueble completamente protegido contra futuras ocupaciones.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></div>
+                    <h3>Vigilancia y monitorizacion</h3>
+                    <p>Vigilancia continua mediante alarmas conectadas a central receptora, camaras de seguridad y rondas periodicas. Informes detallados del estado del inmueble de forma regular.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+                    <h3>Informes periciales</h3>
+                    <p>Informes periciales detallados sobre el estado del inmueble, los danos causados por la ocupacion ilegal y la valoracion economica. Fundamentales para los procesos judiciales y reclamaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PROCESO - Imagen: pasillo (interior del inmueble a recuperar)
+         ========================================== -->
+    <section class="section" id="proceso" style="background:var(--bg-primary)">
+        <div class="container">
+            <div class="si-grid reverse reveal">
+                <div class="si-img">
+                    <img src="https://i.imgur.com/fN1Pzds.jpeg" alt="Interior del inmueble a recuperar">
+                </div>
+                <div class="si-content">
+                    <span class="section-label">Como trabajamos</span>
+                    <h2 class="section-title">Un proceso probado, resultados garantizados</h2>
+                    <p class="section-subtitle">Nuestro metodo ha sido perfeccionado durante mas de 15 anos. Cada paso esta disenado para garantizar la recuperacion de tu inmueble de forma rapida, segura y legal.</p>
+                    <div class="feat-list">
+                        <div class="feat-item">
+                            <div class="feat-icon" style="font-family:var(--font-heading);font-weight:700;color:var(--accent);font-size:1rem">1</div>
+                            <div><h4>Contacto inicial</h4><p>LLamanos al 676 345 676 o completa el formulario. Recopilamos toda la informacion necesaria sobre tu caso de forma confidencial y sin compromiso.</p></div>
+                        </div>
+                        <div class="feat-item">
+                            <div class="feat-icon" style="font-family:var(--font-heading);font-weight:700;color:var(--accent);font-size:1rem">2</div>
+                            <div><h4>Valoracion del caso</h4><p>Nuestros abogados y expertos evaluan la situacion juridica y disenamos una estrategia personalizada para la recuperacion mas rapida y efectiva.</p></div>
+                        </div>
+                        <div class="feat-item">
+                            <div class="feat-icon" style="font-family:var(--font-heading);font-weight:700;color:var(--accent);font-size:1rem">3</div>
+                            <div><h4>Intervencion</h4><p>El equipo de seguridad privada actua de forma coordinada bajo supervision juridica para proceder a la recuperacion, siempre dentro de la legalidad.</p></div>
+                        </div>
+                        <div class="feat-item">
+                            <div class="feat-icon" style="font-family:var(--font-heading);font-weight:700;color:var(--accent);font-size:1rem">4</div>
+                            <div><h4>Entrega y garantia</h4><p>Te entregamos el inmueble desocupado, con cerraduras nuevas y seguridad instalada. Incluimos seguimiento posterior para tu tranquilidad.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section stats">
+        <div class="container">
+            <div class="stats-grid reveal">
+                <div class="stat-item"><div class="stat-number">2.500<span>+</span></div><div class="stat-label">Inmuebles recuperados</div></div>
+                <div class="stat-item"><div class="stat-number">98<span>%</span></div><div class="stat-label">Tasa de exito</div></div>
+                <div class="stat-item"><div class="stat-number">24<span>h</span></div><div class="stat-label">Respuesta maxima</div></div>
+                <div class="stat-item"><div class="stat-number">150<span>+</span></div><div class="stat-label">Profesionales en activo</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         POR QUE ELEGIRNOS - Imagen: arresto (capacidad de actuacion)
+         ========================================== -->
+    <section class="section" style="background:var(--bg-secondary)">
+        <div class="container">
+            <div class="si-grid reveal">
+                <div class="si-content">
+                    <span class="section-label">Por que elegirnos</span>
+                    <h2 class="section-title">La confianza de miles de propietarios respalda nuestro trabajo</h2>
+                    <p class="section-subtitle">Elegir DESOKUPA significa poner tu propiedad en manos de profesionales con una trayectoria demostrable. Nuestro compromiso con la legalidad, la eficacia y la satisfaccion del cliente nos diferencia de cualquier otra opcion del mercado.</p>
+                    <p class="si-text">Cada caso es unico, y tratamos cada uno con la maxima dedicacion y profesionalidad. Nuestro equipo cuenta con la formacion y la experiencia necesarias para hacer frente a cualquier situacion, desde una ocupacion reciente hasta los casos mas complejos con resistencia organizada.</p>
+                    <div class="feat-list">
+                        <div class="feat-item">
+                            <div class="feat-icon" style="font-family:var(--font-heading);font-weight:700;color:var(--accent);font-size:.85rem">01</div>
+                            <div><h4>Experiencia demostrada</h4><p>Mas de 15 anos de experiencia y mas de 2.500 inmuebles recuperados con exito avalan nuestra capacidad para resolver cualquier situacion de ocupacion ilegal.</p></div>
+                        </div>
+                        <div class="feat-item">
+                            <div class="feat-icon" style="font-family:var(--font-heading);font-weight:700;color:var(--accent);font-size:.85rem">02</div>
+                            <div><h4>Garantia juridica total</h4><p>Todas nuestras actuaciones cuentan con el respaldo de abogados especializados, asegurando que cada intervencion se realiza dentro del marco legal vigente.</p></div>
+                        </div>
+                        <div class="feat-item">
+                            <div class="feat-icon" style="font-family:var(--font-heading);font-weight:700;color:var(--accent);font-size:.85rem">03</div>
+                            <div><h4>Transparencia absoluta</h4><p>Informes periodicos, comunicacion directa y total claridad sobre el avance de cada caso. El propietario siempre sabe en que punto se encuentra su expediente.</p></div>
+                        </div>
+                        <div class="feat-item">
+                            <div class="feat-icon" style="font-family:var(--font-heading);font-weight:700;color:var(--accent);font-size:.85rem">04</div>
+                            <div><h4>Resultados rapidos</h4><p>Nuestro protocolo permite la recuperacion del inmueble en tiempos minimos, evitando los largos plazos de los procedimientos judiciales tradicionales.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="si-img">
+                    <img src="https://i.imgur.com/0wSK4Rj.jpeg" alt="Nuestro equipo actuando con seguridad y profesionalidad">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         EQUIPO Y FORMACION - Imagen: entrenamiento kick boxing
+         ========================================== -->
+    <section class="section" id="equipo" style="background:var(--bg-primary)">
+        <div class="container">
+            <div class="si-grid reverse reveal">
+                <div class="si-img">
+                    <img src="https://i.imgur.com/tFtxzc6.jpeg" alt="Entrenamiento del equipo de seguridad">
+                </div>
+                <div class="si-content">
+                    <span class="section-label">Nuestro equipo</span>
+                    <h2 class="section-title">Profesionales preparados para cualquier situacion</h2>
+                    <p class="section-subtitle">Nuestro equipo recibe formacion continua en seguridad, defensa personal y gestion de conflictos. Cada miembro esta preparado para actuar con profesionalidad en cualquier circunstancia.</p>
+                    <p class="si-text">En DESOKUPA creemos que la preparacion es la clave del exito. Por eso contamos con instalaciones propias de entrenamiento donde nuestro equipo de campo recibe formacion constante en kick boxing, defensa personal, tactica de intervencion y protocolos de actuacion legal. Esta preparacion integral nos permite garantizar la maxima seguridad y eficacia en cada operacion de recuperacion de inmuebles.</p>
+                    <div class="feat-list">
+                        <div class="feat-item">
+                            <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+                            <div><h4>Formacion continua</h4><p>Entrenamiento permanente en defensa personal, kick boxing y gestion de conflictos en nuestras propias instalaciones.</p></div>
+                        </div>
+                        <div class="feat-item">
+                            <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+                            <div><h4>Personal habilitado</h4><p>Todos nuestros agentes cuentan con la habilitacion profesional requerida por la Ley de Seguridad Privada y siguen protocolos homologados.</p></div>
+                        </div>
+                        <div class="feat-item">
+                            <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></div>
+                            <div><h4>Coordinacion en tiempo real</h4><p>Comunicacion constante entre el equipo de campo, los abogados y el centro de operaciones durante cada intervencion.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         INSTALACIONES - Imagen: gimnasio de la empresa
+         ========================================== -->
+    <section class="section" style="background:var(--bg-secondary)">
+        <div class="container">
+            <div class="si-grid reveal">
+                <div class="si-content">
+                    <span class="section-label">Nuestras instalaciones</span>
+                    <h2 class="section-title">Equipamiento e infraestructura de primer nivel</h2>
+                    <p class="section-subtitle">Contamos con instalaciones propias equipadas con la ultima tecnologia y todo lo necesario para la preparacion de nuestro equipo y la coordinacion de operaciones.</p>
+                    <p class="si-text">Nuestro centro de operaciones dispone de gimnasio completamente equipado para la preparacion fisica del equipo, salas de coordinacion tactica, oficinas juridicas y un centro de monitorizacion conectado las 24 horas con nuestros equipos desplegados en el terreno. Todo esta disenado para garantizar la maxima eficacia en cada intervencion.</p>
+                    <div class="feat-list">
+                        <div class="feat-item">
+                            <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                            <div><h4>Centro de operaciones 24h</h4><p>Sala de coordinacion conectada permanentemente con los equipos de campo y las fuerzas de seguridad.</p></div>
+                        </div>
+                        <div class="feat-item">
+                            <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                            <div><h4>Gimnasio y zona de entrenamiento</h4><p>Espacio dedicado a la preparacion fisica y tactica del equipo con equipamiento profesional.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="si-img">
+                    <img src="https://i.imgur.com/M9UvGy5.jpeg" alt="Gimnasio y zona de entrenamiento de DESOKUPA">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section pricing" id="precios">
+        <div class="container">
+            <div class="section-header center reveal">
+                <span class="section-label">Planes y tarifas</span>
+                <h2 class="section-title">Soluciones para cada situacion</h2>
+                <p class="section-subtitle">Nuestros planes se adaptan a la complejidad de cada caso. Desde una intervencion rapida hasta la gestion integral de situaciones complejas.</p>
+                <div class="accent-line"></div>
+            </div>
+            <div class="pricing-grid reveal">
+                <div class="pricing-card">
+                    <div class="pricing-tier">Plan basico</div>
+                    <div class="pricing-name">Intervencion Express</div>
+                    <div class="pricing-desc">Para ocupaciones recientes de menos de 48 horas. Actuacion inmediata antes de que la situacion se complique.</div>
+                    <div class="pricing-amount"><span class="pricing-currency">&#8364;</span><span class="pricing-value">300</span><span class="pricing-from">desde</span></div>
+                    <ul class="pricing-features">
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Valoracion inicial del caso sin coste</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Intervencion de seguridad privada</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Cambio de cerradura basico</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Informe fotografico del inmueble</li>
+                        <li class="disabled"><svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> Asesoria juridica incluida</li>
+                        <li class="disabled"><svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> Seguimiento post-recuperacion</li>
+                    </ul>
+                    <a href="tel:676345676" class="pricing-btn pricing-btn-secondary">Solicitar informacion</a>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="pricing-tier">Plan estandar</div>
+                    <div class="pricing-name">Recuperacion Integral</div>
+                    <div class="pricing-desc">La opcion mas completa para la mayoria de casos. Gestion juridica, intervencion y aseguramiento posterior.</div>
+                    <div class="pricing-amount"><span class="pricing-currency">&#8364;</span><span class="pricing-value">800</span><span class="pricing-from">desde</span></div>
+                    <ul class="pricing-features">
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Valoracion y diagnostico completo</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Intervencion de seguridad coordinada</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Cambio de cerraduras completo</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Asesoria juridica incluida</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Informe pericial completo</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> 30 dias de seguimiento post-recuperacion</li>
+                    </ul>
+                    <a href="tel:676345676" class="pricing-btn pricing-btn-primary">Llamar ahora</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-tier">Plan premium</div>
+                    <div class="pricing-name">Casos Complejos</div>
+                    <div class="pricing-desc">Para situaciones de alta complejidad: multiples ocupantes, resistencia organizada o problemas juridicos acumulados.</div>
+                    <div class="pricing-amount"><span class="pricing-currency">&#8364;</span><span class="pricing-value">2.500</span><span class="pricing-from">desde</span></div>
+                    <ul class="pricing-features">
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Valoracion integral con estudio de viabilidad</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Equipo ampliado de seguridad</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Gestion juridica completa hasta sentencia</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Sistema de seguridad premium</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> 90 dias de vigilancia post-recuperacion</li>
+                        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Garantia de recuperacion o devolucion</li>
+                    </ul>
+                    <a href="tel:676345676" class="pricing-btn pricing-btn-secondary">Solicitar informacion</a>
+                </div>
+            </div>
+            <p class="pricing-note reveal">Los precios indicados son orientativos y pueden variar segun las caracteristicas de cada caso. La primera consulta y valoracion es siempre gratuita y sin compromiso. Pregunte por nuestros planes de financacion.</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-header center reveal">
+                <span class="section-label">Testimonios</span>
+                <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+                <p class="section-subtitle">Las experiencias reales de los propietarios que han confiado en nosotros para recuperar sus inmuebles.</p>
+                <div class="accent-line"></div>
+            </div>
+            <div class="testimonials-grid reveal">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                    <p class="testimonial-text">Despues de 8 meses de pesadilla con los ocupas de mi piso en el centro, encontre DESOKUPA. En menos de dos semanas habian recuperado mi propiedad. El equipo fue profesional, respetuoso y me mantuvo informada en todo momento.</p>
+                    <div class="testimonial-author"><div class="testimonial-avatar">MR</div><div><div class="testimonial-name">Maria Rodriguez</div><div class="testimonial-role">Propietaria en Madrid</div></div></div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                    <p class="testimonial-text">Mi casa de campo llevaba ocupada mas de un ano. Los abogados me dijeron que el proceso judicial podria durar otros dos anos. Contacte con DESOKUPA y en 10 dias tenia mi casa de vuelta, con las cerraduras cambiadas y seguridad instalada.</p>
+                    <div class="testimonial-author"><div class="testimonial-avatar">JG</div><div><div class="testimonial-name">Javier Garcia</div><div class="testimonial-role">Propietario en Toledo</div></div></div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                    <p class="testimonial-text">Como administradora de fincas, he trabajado con DESOKUPA en multiples ocasiones. Su profesionalidad y eficacia son incomparables. Todos los casos que les he derivado se han resuelto con exito y en tiempos muy inferiores a los habituales.</p>
+                    <div class="testimonial-author"><div class="testimonial-avatar">AL</div><div><div class="testimonial-name">Ana Lopez</div><div class="testimonial-role">Administradora de fincas en Barcelona</div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEGAL -->
+    <section class="section legal" id="legal">
+        <div class="container">
+            <div class="section-header center reveal">
+                <span class="section-label">Marco legal</span>
+                <h2 class="section-title">Actuamos siempre dentro de la ley</h2>
+                <p class="section-subtitle">La legalidad es el pilar fundamental de nuestra actuacion. Cada intervencion se realiza conforme a la legislacion vigente.</p>
+                <div class="accent-line"></div>
+            </div>
+            <div class="legal-grid reveal">
+                <div class="legal-card">
+                    <div class="legal-card-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+                    <h3>Ley de Propiedad Horizontal</h3>
+                    <p>La Ley 49/1960, modificada por la Ley 5/2018, establece que las comunidades de propietarios pueden acordar la expulsion de ocupantes ilegales y que los propietarios tienen derecho a la defensa de su vivienda frente a la ocupacion ilegal.</p>
+                </div>
+                <div class="legal-card">
+                    <div class="legal-card-icon"><svg viewBox="0 0 24 24"><path d="M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12c-.83 0-1.5.68-1.5 1.5s.68 1.5 1.5 1.5 1.5-.68 1.5-1.5-.67-1.5-1.5-1.5zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z"/></svg></div>
+                    <h3>Codigo Penal - Allanamiento de morada</h3>
+                    <p>El articulo 202 del Codigo Penal tipifica como delito el allanamiento de morada, castigando con penas de prision de 6 meses a 2 anos a quien entre en la morada de otra persona sin su consentimiento.</p>
+                </div>
+                <div class="legal-card">
+                    <div class="legal-card-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+                    <h3>Ley de Enjuiciamiento Civil</h3>
+                    <p>La Ley 1/2000 regula los procedimientos de desahucio por ocupacion ilegal, estableciendo un procedimiento preferente y sumario que permite la recuperacion del inmueble en plazos mas breves.</p>
+                </div>
+                <div class="legal-card">
+                    <div class="legal-card-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+                    <h3>Ley de Seguridad Privada</h3>
+                    <p>La Ley 5/2014 regula la actividad de las empresas de seguridad. DESOKUPA opera bajo estricto cumplimiento de esta norma, con personal habilitado y protocolos homologados por el Ministerio del Interior.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq">
+        <div class="container">
+            <div class="section-header center reveal">
+                <span class="section-label">Preguntas frecuentes</span>
+                <h2 class="section-title">Resolvemos tus dudas</h2>
+                <p class="section-subtitle">Las preguntas mas comunes sobre nuestros servicios. Si no encuentras la respuesta, contactanos directamente.</p>
+                <div class="accent-line"></div>
+            </div>
+            <div class="faq-list reveal">
+                <div class="faq-item active">
+                    <div class="faq-question"><span>Es legal desocupar un inmueble por la fuerza?</span><div class="faq-toggle">+</div></div>
+                    <div class="faq-answer" style="max-height:200px"><div class="faq-answer-inner">Si, siempre que se realice dentro del marco juridico vigente. Nuestro equipo de abogados supervisa cada intervencion para garantizar el cumplimiento de la legislacion aplicable, incluyendo la Ley de Seguridad Privada y el Codigo Penal en materia de allanamiento de morada y ocupacion ilegal.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><span>Cuanto tiempo tarda el proceso?</span><div class="faq-toggle">+</div></div>
+                    <div class="faq-answer"><div class="faq-answer-inner">En ocupaciones recientes (menos de 48h), la recuperacion puede realizarse en 48-72 horas. En casos mas establecidos, de 1 a 4 semanas. En los supuestos mas complejos, hasta 2 meses. Siempre significativamente inferior a un procedimiento judicial ordinario (6 meses - 2 anos).</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><span>Que sucede si los ocupantes se resisten?</span><div class="faq-toggle">+</div></div>
+                    <div class="faq-answer"><div class="faq-answer-inner">Nuestro equipo esta entrenado para gestionar la resistencia de forma profesional. Priorizamos la mediacion y la salida voluntaria. En caso de resistencia activa, coordinamos con las fuerzas de seguridad del Estado garantizando la seguridad de todas las personas involucradas.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><span>Cual es el coste del servicio?</span><div class="faq-toggle">+</div></div>
+                    <div class="faq-answer"><div class="faq-answer-inner">Los planes empiezan desde 300 euros para intervenciones express. La primera consulta es gratuita y sin compromiso. Una vez evaluado el caso, presentamos un presupuesto detallado y transparente. No hay costes ocultos. Disponemos de planes de financion y pago fraccionado.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><span>Ofrecen servicio en toda Espana?</span><div class="faq-toggle">+</div></div>
+                    <div class="faq-answer"><div class="faq-answer-inner">Si, operamos en todo el territorio nacional con tiempo de respuesta maximo de 24 horas en peninsula y 48 horas en Baleares y Canarias. Nuestra red de profesionales cubre la totalidad del territorio espanol.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><span>Que garantia tengo de que no sera ocupado de nuevo?</span><div class="faq-toggle">+</div></div>
+                    <div class="faq-answer"><div class="faq-answer-inner">Tras la recuperacion, cambiamos todas las cerraduras e instalamos seguridad adicional. Ofrecemos vigilancia post-recuperacion con rondas periodicas y alarmas conectadas. En caso de nueva ocupacion durante el periodo de garantia, la recuperacion sera sin coste adicional.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><span>Que documentos necesito?</span><div class="faq-toggle">+</div></div>
+                    <div class="faq-answer"><div class="faq-answer-inner">Necesitaras la escritura de propiedad o documento que acredite tu derecho, tu DNI y, si los tienes, denuncias previas. No te preocupes si no tienes todo, nuestro equipo juridico te ayudara a recopilar lo necesario durante la valoracion inicial gratuita.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+        <div class="container reveal">
+            <span class="section-label" style="color:rgba(255,255,255,.45)">Actua ahora</span>
+            <h2>Tu propiedad te necesita. Nosotros te ayudamos.</h2>
+            <p class="cta-desc">Cada dia que pasa es un dia mas de sufrimiento. No esperes mas. LLamanos ahora y te ayudaremos a recuperar lo que es tuyo.</p>
+            <div class="cta-phone"><a href="tel:676345676">676 345 676</a></div>
+            <div class="cta-phone-label">Linea gratuita, disponible 24h</div>
+            <div class="cta-actions">
+                <a href="tel:676345676" class="btn-primary"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#fff"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> LLamar ahora</a>
+                <a href="#contacto" class="btn-outline">Solicitar informacion</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CONTACTO - Imagen: oficina dentro (interior de nuestras oficinas)
+         ========================================== -->
+    <section class="section contact" id="contacto">
+        <div class="container">
+            <div class="section-header center reveal">
+                <span class="section-label">Contacto</span>
+                <h2 class="section-title">Estamos aqui para ayudarte</h2>
+                <p class="section-subtitle">Complete el formulario o contacte con nosotros directamente. La primera consulta es gratuita y sin compromiso.</p>
+                <div class="accent-line"></div>
+            </div>
+            <div class="contact-grid reveal">
+                <div>
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+                            <div class="contact-info-text"><h4>Telefono</h4><p>676 345 676 (Linea gratuita, 24h)</p><p>91 234 567 890 (Oficina central)</p></div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                            <div class="contact-info-text"><h4>Correo electronico</h4><p>info@desokupa.es</p><p>urgencias@desokupa.es</p></div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                            <div class="contact-info-text"><h4>Oficina central</h4><p>Calle Gran Via 42, Planta 5</p><p>28013 Madrid, Espana</p></div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+                            <div class="contact-info-text"><h4>Horario de atencion</h4><p>Urgencias: 24 horas, 7 dias a la semana</p><p>Oficina: Lunes a Viernes, 9:00 - 20:00</p></div>
+                        </div>
+                    </div>
+                    <div class="contact-office-img">
+                        <img src="https://i.imgur.com/3KTBJbX.jpeg" alt="Interior de nuestra oficina central">
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group"><label>Nombre</label><input type="text" placeholder="Su nombre completo" required></div>
+                        <div class="form-group"><label>Telefono</label><input type="tel" placeholder="Su numero de telefono" required></div>
+                    </div>
+                    <div class="form-group"><label>Correo electronico</label><input type="email" placeholder="Su direccion de correo"></div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Provincia</label><select><option value="">Seleccione</option><option>Madrid</option><option>Barcelona</option><option>Valencia</option><option>Sevilla</option><option>Alicante</option><option>Malaga</option><option>Baleares</option><option>Canarias</option><option>Otra</option></select></div>
+                        <div class="form-group"><label>Tipo de situacion</label><select><option value="">Seleccione</option><option>Ocupacion reciente (&lt;48h)</option><option>Ocupacion establecida</option><option>Multiple ocupantes</option><option>Resistencia activa</option><option>Prevencion</option><option>Otro</option></select></div>
+                    </div>
+                    <div class="form-group"><label>Descripcion del caso</label><textarea placeholder="Describa brevemente su situacion: tipo de inmueble, tiempo de ocupacion, numero de ocupantes, si hay denuncia previa..."></textarea></div>
+                    <button type="submit" class="form-submit">Solicitar consulta gratuita <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#fff"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand"><img src="https://i.imgur.com/fOOP2c8.jpeg" alt="DESOKUPA"><span class="footer-brand-text">DESOKUPA</span></div>
+                    <p class="footer-desc">Empresa lider en la recuperacion de inmuebles ocupados ilegalmente. Mas de 15 anos de experiencia, mas de 2.500 propiedades devueltas a sus legtimos propietarios. Tu propiedad es tuya, nosotros nos encargamos del resto.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M16 4H8C5.79 4 4 5.79 4 8v8c0 2.21 1.79 4 4 4h8c2.21 0 4-1.79 4-4V8c0-2.21-1.79-4-4-4zm2 12c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2v8z"/><circle cx="12" cy="12" r="3.2"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column"><h4>Servicios</h4><ul class="footer-links"><li><a href="#servicios">Desalojo de inmuebles</a></li><li><a href="#servicios">Prevencion de ocupacion</a></li><li><a href="#servicios">Asesoria juridica</a></li><li><a href="#servicios">Mediacion</a></li><li><a href="#servicios">Cambio de cerraduras</a></li><li><a href="#servicios">Vigilancia</a></li></ul></div>
+                <div class="footer-column"><h4>Empresa</h4><ul class="footer-links"><li><a href="#nosotros">Quienes somos</a></li><li><a href="#equipo">Nuestro equipo</a></li><li><a href="#precios">Planes y tarifas</a></li><li><a href="#legal">Marco legal</a></li><li><a href="#">Blog</a></li><li><a href="#">Trabaja con nosotros</a></li></ul></div>
+                <div class="footer-column"><h4>Contacto</h4><ul class="footer-links"><li><a href="tel:676345676">676 345 676 (Gratuita)</a></li><li><a href="mailto:info@desokupa.es">info@desokupa.es</a></li><li><a href="#">Calle Gran Via 42, Madrid</a></li><li><a href="#">L-V: 9:00 - 20:00</a></li><li><a href="#">Urgencias: 24h</a></li></ul></div>
+            </div>
+            <div class="footer-bottom">
+                <p>2025 DESOKUPA. Todos los derechos reservados. Empresa de seguridad privada registrada en el Ministerio del Interior.</p>
+                <div class="footer-bottom-links"><a href="#">Aviso legal</a><a href="#">Politica de privacidad</a><a href="#">Politica de cookies</a></div>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        function saludar() {
-            alert("¡Privet! 👋 Gracias por visitar mi web, discípulo de Zaien.");
+        // =============================================
+        // TEMA CLARO/OSCURO - Funcionalidad completa
+        // =============================================
+        function toggleTheme() {
+            var html = document.documentElement;
+            var icon = document.getElementById('theme-icon');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                icon.innerHTML = '&#9790;';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.innerHTML = '&#9788;';
+                localStorage.setItem('theme', 'dark');
+            }
         }
-    </script>
+        
+        // Cargar tema guardado al iniciar
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                var icon = document.getElementById('theme-icon');
+                if (icon) icon.innerHTML = '&#9788;';
+            }
+        })();
 
+        // =============================================
+        // MENU MOVIL RESPONSIVE - Con animaciones
+        // =============================================
+        function toggleMobile() {
+            var navLinks = document.getElementById('navLinks');
+            var mobileBtn = document.querySelector('.nav-mobile-btn');
+            
+            if (navLinks.classList.contains('mobile-open')) {
+                navLinks.classList.remove('mobile-open');
+                mobileBtn.classList.remove('active');
+            } else {
+                navLinks.classList.add('mobile-open');
+                mobileBtn.classList.add('active');
+            }
+        }
+        
+        // Cerrar menu al hacer click en un enlace
+        document.querySelectorAll('#navLinks a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    document.getElementById('navLinks').classList.remove('mobile-open');
+                    document.querySelector('.nav-mobile-btn').classList.remove('active');
+                }
+            });
+        });
+
+        // =============================================
+        // FAQ ACCORDION - Expandir/Colapsar preguntas
+        // =============================================
+        document.querySelectorAll('.faq-question').forEach(function(question) {
+            question.addEventListener('click', function() {
+                var item = this.parentElement;
+                var answer = item.querySelector('.faq-answer');
+                var inner = answer.querySelector('.faq-answer-inner');
+                var isActive = item.classList.contains('active');
+                
+                // Cerrar todos los demas items
+                document.querySelectorAll('.faq-item').forEach(function(fi) {
+                    fi.classList.remove('active');
+                    fi.querySelector('.faq-answer').style.maxHeight = '0';
+                });
+                
+                // Si no estaba activo, abrirlo
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = inner.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // =============================================
+        // ANIMACIONES SCROLL REVEAL - Elementos aparecen al scroll
+        // =============================================
+        (function() {
+            var reveals = document.querySelectorAll('.reveal');
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.08,
+                rootMargin: '0px 0px -40px 0px'
+            });
+            
+            reveals.forEach(function(el) {
+                observer.observe(el);
+            });
+        })();
+
+        // =============================================
+        // NAVBAR EFECTO SCROLL - Sombra al hacer scroll
+        // =============================================
+        (function() {
+            var navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        })();
+
+        // =============================================
+        // FORMULARIO DE CONTACTO - Validacion y envio
+        // =============================================
+        function handleSubmit(e) {
+            e.preventDefault();
+            
+            var form = e.target;
+            var inputs = form.querySelectorAll('input[required], textarea');
+            var isValid = true;
+            
+            // Validar campos requeridos
+            inputs.forEach(function(input) {
+                if (input.hasAttribute('required') && !input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444';
+                    setTimeout(function() {
+                        input.style.borderColor = '';
+                    }, 2000);
+                }
+            });
+            
+            if (!isValid) {
+                alert('Por favor, complete todos los campos obligatorios.');
+                return;
+            }
+            
+            // Simular envio con animacion del boton
+            var submitBtn = form.querySelector('.form-submit');
+            var originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Enviando...';
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+            
+            setTimeout(function() {
+                alert('Gracias por contactar con DESOKUPA. Nuestro equipo se pondra en contacto con usted en un plazo maximo de 24 horas. Para urgencias, llame al 676 345 676.');
+                form.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+            }, 1500);
+        }
+
+        // =============================================
+        // SMOOTH SCROLL - Navegacion suave
+        // =============================================
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                var targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    var target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        var offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // =============================================
+        // LIMPIAR ESTILOS MOVIL AL REDIMENSIONAR
+        // =============================================
+        window.addEventListener('resize', function() {
+            var navLinks = document.getElementById('navLinks');
+            var mobileBtn = document.querySelector('.nav-mobile-btn');
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('mobile-open');
+                mobileBtn.classList.remove('active');
+            }
+        });
+
+        // =============================================
+        // SERVICIO CARDS CLICK - Ir a contacto
+        // =============================================
+        document.querySelectorAll('.service-card').forEach(function(card) {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function() {
+                var contacto = document.getElementById('contacto');
+                if (contacto) {
+                    var offsetTop = contacto.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // =============================================
+        // BOTONES PRECIOS - Funcionalidad
+        // =============================================
+        document.querySelectorAll('.pricing-btn-secondary').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var contacto = document.getElementById('contacto');
+                if (contacto) {
+                    var offsetTop = contacto.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Log de inicio
+        console.log('DESOKUPA - Sitio web cargado correctamente');
+        console.log('Telefono de contacto: 676 345 676');
+    </script>
 </body>
 </html>
