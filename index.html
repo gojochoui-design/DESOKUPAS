@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DESOKUPA - Recuperamos tu propiedad | Desalojo profesional de inmuebles ocupados</title>
-    <meta name="description" content="DESOKUPA: empresa lider en recuperacion de inmuebles ocupados ilegalmente. Desalojo profesional, seguro y legal. Llama al 900 123 456.">
+    <meta name="description" content="DESOKUPA: empresa líder en recuperación de inmuebles ocupados ilegalmente. Desalojo profesional, seguro y legal. Llama al 900 123 456.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -50,18 +50,8 @@
         .theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
         .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:var(--accent);color:#fff;font-size:.82rem;font-weight:600;border-radius:8px;transition:all var(--transition-fast)}
         .nav-cta:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 4px 12px var(--accent-glow)}
-        .nav-mobile-btn{display:none;width:40px;height:40px;border:1px solid var(--border-color);background:var(--bg-secondary);border-radius:8px;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer}
+        .nav-mobile-btn{display:none;width:40px;height:40px;border:1px solid var(--border-color);background:var(--bg-secondary);border-radius:8px;flex-direction:column;align-items:center;justify-content:center;gap:5px}
         .nav-mobile-btn span{width:18px;height:2px;background:var(--text-secondary);border-radius:1px;transition:all var(--transition-fast)}
-        .nav-mobile-btn.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-        .nav-mobile-btn.active span:nth-child(2){opacity:0}
-        .nav-mobile-btn.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-        
-        /* MOBILE MENU */
-        .nav-mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:var(--bg-card);border-bottom:1px solid var(--border-color);padding:20px;box-shadow:var(--shadow-lg);z-index:999;flex-direction:column;gap:16px}
-        .nav-mobile-menu.active{display:flex}
-        .nav-mobile-menu a{padding:12px 16px;font-size:.95rem;font-weight:500;color:var(--text-secondary);border-radius:8px;transition:all var(--transition-fast)}
-        .nav-mobile-menu a:hover{background:var(--accent-light);color:var(--accent)}
-        .nav-mobile-menu .nav-mobile-phone{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--accent);color:#fff;border-radius:10px;font-weight:600;margin-top:8px}
 
         /* HERO */
         .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:var(--gradient-hero);overflow:hidden}
@@ -99,8 +89,8 @@
         /* SECTION WITH IMAGE (reusable) */
         .si-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
         .si-grid.reverse .si-img{order:2}.si-grid.reverse .si-content{order:1}
-        .si-img{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-xl);position:relative}
-        .si-img img{width:100%;height:auto;min-height:300px;max-height:460px;object-fit:contain;object-position:center;transition:transform var(--transition)}
+        .si-img{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-xl)}
+        .si-img img{width:100%;height:460px;object-fit:cover;transition:transform var(--transition)}
         .si-img:hover img{transform:scale(1.03)}
         .si-content .section-subtitle{margin-bottom:24px}
         .si-text{font-size:.92rem;color:var(--text-tertiary);line-height:1.8;margin-bottom:28px}
@@ -127,8 +117,8 @@
 
         /* SERVICE WITH IMAGE */
         .svc-img-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-color);background:var(--bg-card);margin-bottom:20px}
-        .svc-img-left{min-height:280px;max-height:400px}
-        .svc-img-left img{width:100%;height:100%;object-fit:cover;object-position:center}
+        .svc-img-left{min-height:360px}
+        .svc-img-left img{width:100%;height:100%;object-fit:cover}
         .svc-img-right{padding:40px 44px}
         .svc-img-right h3{font-family:var(--font-heading);font-size:1.5rem;font-weight:700;margin-bottom:14px}
         .svc-img-right>p{font-size:.92rem;color:var(--text-tertiary);line-height:1.8;margin-bottom:22px}
@@ -272,11 +262,23 @@
         .footer-bottom-links a{font-size:.78rem;color:rgba(255,255,255,.3);transition:color var(--transition-fast)}
         .footer-bottom-links a:hover{color:rgba(255,255,255,.6)}
 
+        /* PROPIETARIOS */
+        .propietarios-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+        .propietario-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);overflow:hidden;transition:all var(--transition);text-align:center}
+        .propietario-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:var(--accent)}
+        .propietario-img{height:200px;overflow:hidden}
+        .propietario-img img{width:100%;height:100%;object-fit:cover;transition:transform var(--transition)}
+        .propietario-card:hover .propietario-img img{transform:scale(1.05)}
+        .propietario-info{padding:24px 20px}
+        .propietario-name{font-family:var(--font-heading);font-size:1.2rem;font-weight:700;margin-bottom:6px;color:var(--text-primary)}
+        .propietario-alias{font-size:.9rem;color:var(--accent);font-weight:600;margin-bottom:8px}
+        .propietario-rol{font-size:.82rem;color:var(--text-tertiary)}
+
         /* RESPONSIVE */
-        @media(max-width:1200px){.services-grid{grid-template-columns:repeat(2,1fr)}.svc-img-grid{grid-template-columns:1fr}.svc-img-left{min-height:280px}.si-grid{gap:48px}.propietarios-grid{grid-template-columns:repeat(2,1fr)}}
-        @media(max-width:1024px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-image-col{display:none}.stats-grid{grid-template-columns:repeat(2,1fr)}.pricing-grid{grid-template-columns:1fr 1fr}.pricing-card.popular{grid-column:span 2}.footer-grid{grid-template-columns:1fr 1fr}.si-grid{gap:40px}.si-img img{min-height:250px;max-height:350px}.section{padding:90px 0}}
-        @media(max-width:768px){.nav-links{display:none}.nav-phone{display:none}.nav-mobile-btn{display:flex}.section{padding:72px 0}.si-grid,.si-grid.reverse{grid-template-columns:1fr;gap:32px}.si-grid.reverse .si-img,.si-grid.reverse .si-content{order:unset}.si-img img{width:100%;height:auto;min-height:220px;object-fit:cover}.services-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr;gap:20px}.process-steps::before{display:none}.stats-grid{grid-template-columns:1fr 1fr;gap:20px}.pricing-grid{grid-template-columns:1fr}.pricing-card.popular{grid-column:span 1}.testimonials-grid{grid-template-columns:1fr}.legal-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr;gap:28px}.contact-grid{grid-template-columns:1fr;gap:36px}.hero-stats{flex-wrap:wrap;gap:24px}.propietarios-grid{grid-template-columns:repeat(2,1fr);gap:16px}.propietario-img{height:160px}.svc-img-grid{grid-template-columns:1fr}.svc-img-left{min-height:200px}.svc-img-right{padding:24px}}
-        @media(max-width:480px){.section{padding:56px 0}.container{padding:0 16px}.hero h1{font-size:clamp(1.6rem,6vw,2rem)}.hero-desc{font-size:.95rem}.hero-actions{flex-direction:column;gap:10px}.hero-actions a{width:100%;justify-content:center}.hero-stats{flex-direction:column;gap:14px;text-align:center}.process-steps{grid-template-columns:1fr;gap:14px}.process-step-number{width:48px;height:48px;font-size:1rem;margin-bottom:12px}.services-grid{grid-template-columns:1fr}.service-card{padding:24px}.stats-grid{grid-template-columns:1fr 1fr;gap:14px}.stat-number{font-size:2rem}.stat-label{font-size:.78rem}.propietarios-grid{grid-template-columns:1fr;gap:14px}.propietario-img{height:180px}.propietario-info{padding:18px 16px}.propietario-name{font-size:1.05rem}.footer-bottom{flex-direction:column;gap:12px;text-align:center}.nav-cta{display:none}.section-title{font-size:clamp(1.3rem,5vw,1.8rem)}.section-subtitle{font-size:.95rem}.feat-item{gap:10px}.feat-icon{width:36px;height:36px;min-width:36px}.feat-item h4{font-size:.82rem}.feat-item p{font-size:.76rem}.si-img img{min-height:180px}.pricing-card{padding:24px 18px}.pricing-value{font-size:2.2rem}.testimonial-card{padding:18px}}
+        @media(max-width:1200px){.services-grid{grid-template-columns:repeat(2,1fr)}.svc-img-grid{grid-template-columns:1fr}.svc-img-left{min-height:280px}}
+        @media(max-width:1024px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-image-col{display:none}.stats-grid{grid-template-columns:repeat(2,1fr)}.pricing-grid{grid-template-columns:1fr 1fr}.pricing-card.popular{grid-column:span 2}.footer-grid{grid-template-columns:1fr 1fr}.si-grid{gap:40px}}
+        @media(max-width:768px){.nav-links{display:none}.nav-phone{display:none}.nav-mobile-btn{display:flex}.section{padding:72px 0}.si-grid,.si-grid.reverse{grid-template-columns:1fr}.si-grid.reverse .si-img,.si-grid.reverse .si-content{order:unset}.si-img img{height:300px}.services-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr}.process-steps::before{display:none}.stats-grid{grid-template-columns:1fr 1fr;gap:20px}.pricing-grid{grid-template-columns:1fr}.pricing-card.popular{grid-column:span 1}.testimonials-grid{grid-template-columns:1fr}.legal-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr;gap:28px}.contact-grid{grid-template-columns:1fr;gap:36px}.hero-stats{flex-wrap:wrap;gap:24px}.propietarios-grid{grid-template-columns:1fr 1fr}}
+        @media(max-width:480px){.hero h1{font-size:2rem}.hero-actions{flex-direction:column}.process-steps{grid-template-columns:1fr}.hero-stats{flex-direction:column;gap:16px}.footer-bottom{flex-direction:column;gap:14px;text-align:center}.propietarios-grid{grid-template-columns:1fr}}
         @media(min-width:1800px){.container{max-width:1400px}}
         @media(min-width:2400px){html{font-size:18px}.container{max-width:1600px}}
     </style>
@@ -311,21 +313,6 @@
                 <button class="nav-mobile-btn" onclick="toggleMobile()"><span></span><span></span><span></span></button>
             </div>
         </div>
-        
-        <!-- MOBILE MENU -->
-        <div class="nav-mobile-menu">
-            <a href="#inicio">Inicio</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#propietarios">Propietarios</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#precios">Precios</a>
-            <a href="#legal">Legal</a>
-            <a href="#contacto">Contacto</a>
-            <a href="tel:900123456" class="nav-mobile-phone">
-                <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#fff"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                Llamar: 900 123 456
-            </a>
-        </div>
     </nav>
 
     <!-- ==========================================
@@ -339,27 +326,84 @@
         <div class="container hero-content">
             <div class="hero-grid">
                 <div>
-                    <div class="hero-badge"><span class="hero-badge-dot"></span> Disponibles 24 horas, 7 dias a la semana</div>
+                    <div class="hero-badge"><span class="hero-badge-dot"></span> Disponibles 24 horas, 7 días a la semana</div>
                     <h1>Recuperamos tu propiedad. <span class="accent">Sin excusas.</span></h1>
-                    <p class="hero-desc">Somos la empresa lider en recuperacion de inmuebles ocupados ilegalmente. Actuamos con rapidez, seguridad y dentro del marco legal para devolverte lo que te pertenece.</p>
+                    <p class="hero-desc">Somos la empresa líder en recuperación de inmuebles ocupados ilegalmente. Actuamos con rapidez, seguridad y dentro del marco legal para devolverte lo que te pertenece.</p>
                     <div class="hero-actions">
                         <a href="tel:900123456" class="btn-primary">
                             <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#fff"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                             Llamar al 900 123 456
                         </a>
                         <a href="#servicios" class="btn-outline">Ver servicios</a>
+                        <a href="#propietarios" class="btn-outline">Ver propietarios</a>
                     </div>
                     <div class="hero-stats">
                         <div><div class="hero-stat-number">2.500<span>+</span></div><div class="hero-stat-label">Desahucios realizados</div></div>
-                        <div><div class="hero-stat-number">98<span>%</span></div><div class="hero-stat-label">Tasa de exito</div></div>
-                        <div><div class="hero-stat-number">24<span>h</span></div><div class="hero-stat-label">Respuesta maxima</div></div>
-                        <div><div class="hero-stat-number">15<span>+</span></div><div class="hero-stat-label">Anos de experiencia</div></div>
+                        <div><div class="hero-stat-number">98<span>%</span></div><div class="hero-stat-label">Tasa de éxito</div></div>
+                        <div><div class="hero-stat-number">24<span>h</span></div><div class="hero-stat-label">Respuesta máxima</div></div>
+                        <div><div class="hero-stat-number">15<span>+</span></div><div class="hero-stat-label">Años de experiencia</div></div>
                     </div>
                 </div>
                 <div class="hero-image-col">
                     <div class="hero-image-main">
                         <img src="https://i.imgur.com/0RvWyyL.jpeg" alt="Recuperacion pacifica de inmueble">
                         <div class="hero-image-label">Recuperacion pacifica y controlada</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PROPIETARIOS
+         ========================================== -->
+    <section class="section" id="propietarios" style="background:var(--bg-primary)">
+        <div class="container">
+            <div class="section-header center reveal">
+                <span class="section-label">Nuestros propietarios</span>
+                <h2 class="section-title">Conoce a los propietarios de DESOKUPA</h2>
+                <p class="section-subtitle">El equipo de profesionales que hace posible la recuperación de tu inmueble.</p>
+                <div class="accent-line"></div>
+            </div>
+            <div class="propietarios-grid reveal">
+                <div class="propietario-card">
+                    <div class="propietario-img">
+                        <img src="https://i.pinimg.com/originals/26/e1/0f/26e10ff8335d1b7d3946b78fa9f1505e.jpg" alt="Adam - Propietario">
+                    </div>
+                    <div class="propietario-info">
+                        <h3 class="propietario-name">Adam</h3>
+                        <p class="propietario-alias">vvchouivv</p>
+                        <p class="propietario-rol">Co-fundador</p>
+                    </div>
+                </div>
+                <div class="propietario-card">
+                    <div class="propietario-img">
+                        <img src="https://thumbs.dreamstime.com/b/hoja-de-papel-con-la-palabra-cruzada-alcohol-y-botellas-bebidas-en-tabla-madera-151369228.jpg" alt="Iker - Propietario">
+                    </div>
+                    <div class="propietario-info">
+                        <h3 class="propietario-name">Iker</h3>
+                        <p class="propietario-alias">iker___.r</p>
+                        <p class="propietario-rol">Director de Operaciones</p>
+                    </div>
+                </div>
+                <div class="propietario-card">
+                    <div class="propietario-img">
+                        <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/135705597/original/c815b715257a4fae742ebd1e0852c426c0dffb0d/put-minecraft-steve-in-the-backround-of-your-picture.jpg" alt="Hugo - Propietario">
+                    </div>
+                    <div class="propietario-info">
+                        <h3 class="propietario-name">Hugo</h3>
+                        <p class="propietario-alias">Hugo.rmrz</p>
+                        <p class="propietario-rol">Jefe de Seguridad</p>
+                    </div>
+                </div>
+                <div class="propietario-card">
+                    <div class="propietario-img">
+                        <img src="https://static.wikia.nocookie.net/wiki-doblaje-espana/images/6/6d/JimmyNeutron1.png/revision/latest/scale-to-width-down/75?cb=20241126222403&path-prefix=es" alt="Rodrigo - Propietario">
+                    </div>
+                    <div class="propietario-info">
+                        <h3 class="propietario-name">Rodrigo</h3>
+                        <p class="propietario-alias">rodri_omchhh</p>
+                        <p class="propietario-rol">Asesor Legal</p>
                     </div>
                 </div>
             </div>
@@ -384,17 +428,17 @@
             <div class="si-grid reveal">
                 <div class="si-content">
                     <span class="section-label">Quienes somos</span>
-                    <h2 class="section-title">La firma mas reconocida en recuperacion de inmuebles</h2>
-                    <p class="section-subtitle">DESOKUPA nacio con una mision clara: defender el derecho a la propiedad. Desde nuestros inicios hemos ayudado a miles de propietarios a recuperar sus viviendas e inmuebles frente a la ocupacion ilegal, actuando siempre con la maxima profesionalidad y dentro del marco juridico vigente.</p>
-                    <p class="si-text">Nuestro equipo esta formado por profesionales del sector de la seguridad privada con anos de experiencia, abogados especializados en derecho inmobiliario y mediadores capacitados para la resolucion de conflictos. Cada caso que llega a nuestras manos es tratado de forma individualizada, disenando una estrategia especifica que garantice la recuperacion del inmueble en el menor tiempo posible y con total garantia legal.</p>
+                    <h2 class="section-title">La firma más reconocida en recuperación de inmuebles</h2>
+                    <p class="section-subtitle">DESOKUPA nació con una misión clara: defender el derecho a la propiedad. Desde nuestros inicios hemos ayudado a miles de propietarios a recuperar sus viviendas e inmuebles frente a la ocupación ilegal, actuando siempre con la máxima profesionalidad y dentro del marco jurídico vigente.</p>
+                    <p class="si-text">Nuestro equipo está formado por profesionales del sector de la seguridad privada con años de experiencia, abogados especializados en derecho inmobiliario y mediadores capacitados para la resolución de conflictos. Cada caso que llega a nuestras manos es tratado de forma individualizada, diseñando una estrategia específica que garantice la recuperación del inmueble en el menor tiempo posible y con total garantía legal.</p>
                     <div class="feat-list">
                         <div class="feat-item">
                             <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
-                            <div><h4>Actuacion legal garantizada</h4><p>Cada intervencion se realiza bajo supervision juridica, cumpliendo estrictamente la legislacion vigente en materia de propiedad y ocupacion ilegal.</p></div>
+                            <div><h4>Actuación legal garantizada</h4><p>Cada intervención se realiza bajo supervisión jurídica, cumpliendo estrictamente la legislación vigente en materia de propiedad y ocupación ilegal.</p></div>
                         </div>
                         <div class="feat-item">
                             <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
-                            <div><h4>Respuesta inmediata 24h</h4><p>Nuestro equipo esta disponible las 24 horas, los 7 dias de la semana. Intervencion garantizada en un plazo maximo de 24 horas desde la solicitud.</p></div>
+                            <div><h4>Respuesta inmediata 24h</h4><p>Nuestro equipo está disponible las 24 horas, los 7 días de la semana. Intervención garantizada en un plazo máximo de 24 horas desde la solicitud.</p></div>
                         </div>
                         <div class="feat-item">
                             <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
@@ -882,38 +926,14 @@
     <script>
         function toggleTheme(){var h=document.documentElement,i=document.getElementById('theme-icon');if(h.getAttribute('data-theme')==='dark'){h.removeAttribute('data-theme');i.innerHTML='&#9790;';localStorage.setItem('theme','light')}else{h.setAttribute('data-theme','dark');i.innerHTML='&#9788;';localStorage.setItem('theme','dark')}}
         (function(){var s=localStorage.getItem('theme');if(s==='dark'){document.documentElement.setAttribute('data-theme','dark');var i=document.getElementById('theme-icon');if(i)i.innerHTML='&#9788;'}})();
-        
-        // Mobile menu toggle
-        function toggleMobile(){
-            var btn = document.querySelector('.nav-mobile-btn');
-            var menu = document.querySelector('.nav-mobile-menu');
-            btn.classList.toggle('active');
-            menu.classList.toggle('active');
-        }
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-mobile-menu a').forEach(function(a){
-            a.addEventListener('click', function(){
-                document.querySelector('.nav-mobile-btn').classList.remove('active');
-                document.querySelector('.nav-mobile-menu').classList.remove('active');
-            });
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e){
-            var menu = document.querySelector('.nav-mobile-menu');
-            var btn = document.querySelector('.nav-mobile-btn');
-            if(menu && menu.classList.contains('active') && !menu.contains(e.target) && !btn.contains(e.target)){
-                menu.classList.remove('active');
-                btn.classList.remove('active');
-            }
-        });
-        
+        function toggleMobile(){var l=document.getElementById('navLinks');if(l.style.display==='flex'){l.style.display='none'}else{l.style.display='flex';l.style.position='absolute';l.style.top='72px';l.style.left='0';l.style.right='0';l.style.background='var(--bg-primary)';l.style.flexDirection='column';l.style.padding='20px 24px';l.style.gap='16px';l.style.borderBottom='1px solid var(--border-color)';l.style.boxShadow='var(--shadow-lg)'}}
+        document.querySelectorAll('#navLinks a').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=768)document.getElementById('navLinks').style.display='none'})});
         document.querySelectorAll('.faq-question').forEach(function(q){q.addEventListener('click',function(){var item=this.parentElement,answer=item.querySelector('.faq-answer'),inner=answer.querySelector('.faq-answer-inner'),isActive=item.classList.contains('active');document.querySelectorAll('.faq-item').forEach(function(fi){fi.classList.remove('active');fi.querySelector('.faq-answer').style.maxHeight='0'});if(!isActive){item.classList.add('active');answer.style.maxHeight=inner.scrollHeight+'px'}})});
         (function(){var r=document.querySelectorAll('.reveal'),o=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});r.forEach(function(el){o.observe(el)})})();
         (function(){var n=document.getElementById('navbar');window.addEventListener('scroll',function(){if(window.scrollY>50)n.classList.add('scrolled');else n.classList.remove('scrolled')})})();
         function handleSubmit(e){e.preventDefault();alert('Gracias por contactar con DESOKUPA. Nuestro equipo se pondra en contacto con usted en un plazo maximo de 24 horas. Para urgencias, llame al 900 123 456.');e.target.reset()}
         document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
+        window.addEventListener('resize',function(){var l=document.getElementById('navLinks');if(window.innerWidth>768){l.style.display='';l.style.position='';l.style.top='';l.style.left='';l.style.right='';l.style.background='';l.style.flexDirection='';l.style.padding='';l.style.gap='';l.style.borderBottom='';l.style.boxShadow=''}});
     </script>
 </body>
 </html>
